@@ -14,6 +14,7 @@
 		A214A3571FF4A0630099C245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A214A3551FF4A0630099C245 /* LaunchScreen.storyboard */; };
 		A214A3621FF4A0630099C245 /* tippyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214A3611FF4A0630099C245 /* tippyTests.swift */; };
 		A214A36D1FF4A0630099C245 /* tippyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214A36C1FF4A0630099C245 /* tippyUITests.swift */; };
+		A24A5BEE1FF8DC6C009E63FD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24A5BED1FF8DC6C009E63FD /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A214A3681FF4A0630099C245 /* tippyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tippyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A214A36C1FF4A0630099C245 /* tippyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippyUITests.swift; sourceTree = "<group>"; };
 		A214A36E1FF4A0630099C245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A24A5BED1FF8DC6C009E63FD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				A214A34C1FF4A0630099C245 /* AppDelegate.swift */,
 				A214A34E1FF4A0630099C245 /* ViewController.swift */,
+				A24A5BED1FF8DC6C009E63FD /* SettingsViewController.swift */,
 				A214A3501FF4A0630099C245 /* Main.storyboard */,
 				A214A3531FF4A0630099C245 /* Assets.xcassets */,
 				A214A3551FF4A0630099C245 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24A5BEE1FF8DC6C009E63FD /* SettingsViewController.swift in Sources */,
 				A214A34F1FF4A0630099C245 /* ViewController.swift in Sources */,
 				A214A34D1FF4A0630099C245 /* AppDelegate.swift in Sources */,
 			);
