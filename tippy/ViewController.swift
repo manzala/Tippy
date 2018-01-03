@@ -15,26 +15,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipController: UISegmentedControl!
     @IBOutlet weak var splitController: UISegmentedControl!
     @IBOutlet weak var splitLabel: UILabel!
-   // let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  defaults.synchronize()
-        billField.becomeFirstResponder()
-      //  tipController.selectedSegmentIndex = defaults.integer(forKey: "default_tip_index")
-        // Do any additional setup after loading the view, typically from a nib.
+          billField.becomeFirstResponder()
+     
     }
 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    
-//    @IBAction func toSettings(_ sender: Any) {
-//        self.performSegue(withIdentifier: "toSettings", sender: self)
-//    }
     
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
@@ -51,6 +43,44 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
         splitLabel.text = String(format: "$%.2f", total/Double((splitNumbers[splitController.selectedSegmentIndex])))
         
+    }
+    @IBAction func splitSegmentTap(_ sender: Any) {
+      
+        self.splitLabel.transform = CGAffineTransform(scaleX: 1.0, y: 2.0)
+        
+        UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: [], animations: {
+            self.splitLabel.transform = .identity
+        }, completion: nil)
+    }
+    
+    @IBAction func changeColor(_ sender: Any) {
+        let index = tipController.selectedSegmentIndex
+       switch index {
+       case 0: view.backgroundColor = UIColor.orange
+       case 1: view.backgroundColor = UIColor.purple
+       case 2: view.backgroundColor = UIColor.red
+       default:
+        break
+        }
+    }
+    @IBAction func splitChangeColor(_ sender: Any) {
+        let index = splitController.selectedSegmentIndex
+        switch index {
+        case 0: self.view.backgroundColor = UIColor.orange
+        case 1: view.backgroundColor = UIColor.purple
+        case 2: view.backgroundColor = UIColor.red
+        case 3: view.backgroundColor = UIColor.blue
+        default:
+            break
+        }
+    }
+    
+    @IBAction func segmentTap(_ sender: Any) {
+        self.totalLabel.transform = CGAffineTransform(scaleX: 1.0, y: 2.0)
+        
+        UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: [], animations: {
+            self.totalLabel.transform = .identity
+        }, completion: nil)
     }
     
 }
