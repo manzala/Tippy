@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-[![Tippy_Pre_Work.gif](https://s26.postimg.org/yyfomb7ax/Tippy_Pre_Work.gif)](https://postimg.org/image/6lk6vulkl/)
+[![test.gif](https://s26.postimg.org/fn7x0s5xl/test.gif)](https://postimg.org/image/mqfsgebd1/)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
