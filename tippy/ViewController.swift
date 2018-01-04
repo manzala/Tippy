@@ -15,10 +15,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipController: UISegmentedControl!
     @IBOutlet weak var splitController: UISegmentedControl!
     @IBOutlet weak var splitLabel: UILabel!
+    let defaults = UserDefaults.standard
+    var tipDidChange: Bool = false;
+    var tipPercentages = [0.18, 0.20, 0.25]
     
     override func viewDidLoad() {
         super.viewDidLoad()
           billField.becomeFirstResponder()
+     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let currentTipIndex = tipController.selectedSegmentIndex
+        if defaults.value(forKey: "default_tip_value") != nil {
+            
+            tipController.setTitle(defaults.value(forKey: "default_tip_value") as! String, forSegmentAt: currentTipIndex)
+            let newTipValue = defaults.value(forKey: "default_tip_value") as! String
+            print(newTipValue)
+            let StrTipValue = Double(newTipValue.prefix(2))
+            print("StrTipValue " + String(describing: StrTipValue))
+            var finalValue = Double(StrTipValue! as Double / 100)
+            print("decimal value is: " + String(finalValue))
+            tipPercentages[currentTipIndex] = Double(finalValue)
+            tipDidChange = true;
+        }
+        
+        if (tipDidChange) {
+            calculateTip(self)
+        }
      
     }
 
@@ -33,7 +57,6 @@ class ViewController: UIViewController {
     }
     @IBAction func calculateTip(_ sender: Any) {
         
-        let tipPercentages = [0.18, 0.20, 0.25]
         let splitNumbers = [1,2,3,4]
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipController.selectedSegmentIndex]

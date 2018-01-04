@@ -106,7 +106,7 @@
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="jH0-oK-moB"/>
                                 </connections>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="tipController" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="fZu-dh-Hdi">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="tipController" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="fZu-dh-Hdi">
                                 <rect key="frame" x="25" y="203" width="325" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -135,12 +135,13 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tippy" id="7M8-oc-xjf">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="jbz-a6-E0z">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="setting" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pvn-N7-vqX">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" image="Settings-icon" style="plain" id="Q0n-qp-V43">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4S2-vc-E91">
+                                <rect key="frame" x="302" y="7" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
                                 <connections>
-                                    <action selector="toSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eUQ-bh-7M5"/>
+                                    <segue destination="KgX-41-yAw" kind="push" id="I7b-JQ-ATv"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -162,12 +163,11 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="397.5" y="146.5"/>
+            <point key="canvasLocation" x="609.5" y="146.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7gu-Cd-bOI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5jT-nx-gpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bsk-t1-dBc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BVt-tB-0od">
@@ -176,12 +176,56 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7dR-FW-bsI"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Dv3-Ot-36f"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jT-nx-gpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-50" y="147"/>
         </scene>
+        <!--Settings Controller-->
+        <scene sceneID="aNo-7s-4Q5">
+            <objects>
+                <viewController title="Settings" id="KgX-41-yAw" userLabel="Settings Controller" customClass="SettingsViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nqa-hp-H20">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="UxA-n8-oxe">
+                                <rect key="frame" x="68" y="79" width="239" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%" width="73"/>
+                                    <segment title="16%"/>
+                                    <segment title="30%"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uyD-LR-qtG">
+                                <rect key="frame" x="138" y="165" width="98" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveChanges:" destination="KgX-41-yAw" eventType="touchUpInside" id="1cS-2s-ofR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="2zf-8S-T1U">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="yNy-rJ-3cy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="TipSegController" destination="UxA-n8-oxe" id="0KK-uN-fa4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBY-4P-KDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1474.5" y="146.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Settings-icon" width="512" height="512"/>
+    </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
