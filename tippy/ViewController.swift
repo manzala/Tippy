@@ -22,13 +22,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
           billField.becomeFirstResponder()
-     
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         let currentTipIndex = tipController.selectedSegmentIndex
+        
+        if billField.text == "" || (billField.text == nil) {
+            billField.text = String(defaults.double(forKey: "bill_value"))
+        }
         if defaults.value(forKey: "default_tip_value") != nil {
-            
+        
             tipController.setTitle(defaults.value(forKey: "default_tip_value") as! String, forSegmentAt: currentTipIndex)
             let newTipValue = defaults.value(forKey: "default_tip_value") as! String
             print(newTipValue)
@@ -61,7 +65,7 @@ class ViewController: UIViewController {
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipController.selectedSegmentIndex]
         let total = bill + tip
-        
+        defaults.set(bill, forKey: "bill_value")
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         splitLabel.text = String(format: "$%.2f", total/Double((splitNumbers[splitController.selectedSegmentIndex])))

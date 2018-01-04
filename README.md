@@ -4,29 +4,30 @@
 
 Submitted by: **Syeda Kazmi-Shah**
 
-Time spent: **2** hours spent in total
+Time spent: **5** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is complete:
 
-* [ x] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [x] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
 
 The following **optional** features are implemented:
-* [ ] Settings page to change the default tip percentage.
-* [ ] UI animations
+* [x] Settings page to change the default tip percentage.
+* [x] UI animations
 * [ ] Remembering the bill amount across app restarts (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
-* [x ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [ ] TBA
+- [x] Splitting the bill with friends
+- [x] Changing background color upon changes in the UISegmentController
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-[![Tippy_Pre_Work.gif](https://s17.postimg.org/llnb2rd3j/Tippy_Pre_Work.gif)](https://postimg.org/image/dg594louj/)
+[![Tippy_Pre_Work.gif](https://s26.postimg.org/yyfomb7ax/Tippy_Pre_Work.gif)](https://postimg.org/image/6lk6vulkl/)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
